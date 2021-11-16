@@ -13,6 +13,8 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add directory="src/game_objects" />
+					<Add directory="src" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -22,6 +24,8 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add directory="src/game_objects" />
+					<Add directory="src" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -33,6 +37,8 @@
 			<Add option="-std=gnu++17" />
 			<Add option="-DSFML_STATIC" />
 			<Add directory="D:/Programs/Libs/CPP/SFML-2.5.1/include" />
+			<Add directory="src" />
+			<Add directory="D:/Programs/Libs/CPP/SFML-2.5.1/TGUI-0.10/include" />
 		</Compiler>
 		<Linker>
 			<Add library="mingw32" />
@@ -46,10 +52,19 @@
 			<Add library="D:/Programs/Libs/CPP/SFML-2.5.1/build/lib/libsfml-network.a" />
 			<Add library="D:/Programs/Libs/CPP/SFML-2.5.1/build/lib/libsfml-system.a" />
 			<Add library="D:/Programs/Libs/CPP/SFML-2.5.1/build/lib/libsfml-window.a" />
+			<Add library="D:/Programs/Libs/CPP/SFML-2.5.1/TGUI-0.10/build/lib/libtgui.a" />
 			<Add directory="D:/Programs/Libs/CPP/SFML-2.5.1/build/lib" />
+			<Add directory="src" />
 		</Linker>
+		<Unit filename=".gitignore" />
 		<Unit filename="cb.bmp" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/game_objects/htblock.cpp" />
+		<Unit filename="src/game_objects/htblock.h" />
+		<Unit filename="src/game_objects/httowerbase.cpp" />
+		<Unit filename="src/game_objects/httowerbase.h" />
+		<Unit filename="src/htapplication.cpp" />
+		<Unit filename="src/htapplication.h" />
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>

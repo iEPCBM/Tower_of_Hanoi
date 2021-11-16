@@ -1,0 +1,261 @@
+Renderer.1 {
+    BackgroundColor = #F5F5F5;
+    BackgroundColorDisabled = #E6E6E6;
+    BackgroundColorHover = white;
+    BorderColor = #3C3C3C;
+    BorderColorDisabled = #7D7D7D;
+    BorderColorFocused = #1E1EB4;
+    BorderColorHover = black;
+    Borders = (1, 1, 1, 1);
+    CheckColor = #3C3C3C;
+    CheckColorDisabled = #7D7D7D;
+    CheckColorHover = black;
+    TextColor = #3C3C3C;
+    TextColorDisabled = #7D7D7D;
+    TextColorHover = black;
+    TextDistanceRatio = 0.2;
+    TextureChecked = None;
+    TextureCheckedDisabled = None;
+    TextureCheckedFocused = None;
+    TextureCheckedHover = None;
+    TextureUnchecked = None;
+    TextureUncheckedDisabled = None;
+    TextureUncheckedFocused = None;
+    TextureUncheckedHover = None;
+}
+
+Renderer.2 {
+    BackgroundColor = #F5F5F5;
+    BackgroundColorDisabled = #E6E6E6;
+    BackgroundColorHover = white;
+    BorderColor = #3C3C3C;
+    BorderColorDisabled = #7D7D7D;
+    BorderColorHover = black;
+    Borders = (1, 1, 1, 1);
+    CaretColor = black;
+    CaretWidth = 1;
+    DefaultTextColor = #A0A0A0;
+    Padding = (0, 0, 0, 0);
+    SelectedTextBackgroundColor = #006EFF;
+    SelectedTextColor = white;
+    TextColor = #3C3C3C;
+    TextColorDisabled = #7D7D7D;
+    Texture = None;
+    TextureDisabled = None;
+    TextureFocused = None;
+    TextureHover = None;
+}
+
+Renderer.3 {
+    BackgroundColor = transparent;
+    BorderColor = #3C3C3C;
+    Borders = (0, 0, 0, 0);
+    TextColor = #3C3C3C;
+    TextureBackground = None;
+}
+
+Picture.Picture1 {
+    Size = (800, 600);
+
+    Renderer {
+        Texture = "./assets/images/menu_bg_ed.jpg" Smooth;
+        TransparentTexture = false;
+    }
+}
+
+ChildWindow.cwin_params {
+    Position = (160, 290);
+    Size = (390, 150);
+    Title = "Параметры сеанса";
+    TitleAlignment = Left;
+    TitleButtons = None;
+    TitleTextSize = 13;
+
+    Renderer {
+        BackgroundColor = #E6E6E6;
+        BorderBelowTitleBar = 1;
+        BorderColor = black;
+        Borders = (1, 1, 1, 1);
+        DistanceToSide = 3;
+        PaddingBetweenButtons = 1;
+        ShowTextOnTitleButtons = true;
+        TextureBackground = None;
+        TextureTitleBar = None;
+        TitleBarColor = white;
+        TitleColor = #3C3C3C;
+
+        CloseButton {
+            BackgroundColor = #F5F5F5;
+            BackgroundColorDown = #EBEBEB;
+            BackgroundColorHover = white;
+            BorderColor = #3C3C3C;
+            BorderColorDown = black;
+            BorderColorHover = black;
+            Borders = (1, 1, 1, 1);
+            TextColor = #3C3C3C;
+            TextColorDown = black;
+            TextColorHover = black;
+            Texture = None;
+            TextureDisabled = None;
+            TextureDown = None;
+            TextureDownFocused = None;
+            TextureDownHover = None;
+            TextureFocused = None;
+            TextureHover = None;
+        }
+
+        MaximizeButton {
+            BackgroundColor = #F5F5F5;
+            BackgroundColorDown = #EBEBEB;
+            BackgroundColorHover = white;
+            BorderColor = #3C3C3C;
+            BorderColorDown = black;
+            BorderColorHover = black;
+            Borders = (1, 1, 1, 1);
+            TextColor = #3C3C3C;
+            TextColorDown = black;
+            TextColorHover = black;
+            Texture = None;
+            TextureDisabled = None;
+            TextureDown = None;
+            TextureDownFocused = None;
+            TextureDownHover = None;
+            TextureFocused = None;
+            TextureHover = None;
+        }
+
+        MinimizeButton {
+            BackgroundColor = #F5F5F5;
+            BackgroundColorDown = #EBEBEB;
+            BackgroundColorHover = white;
+            BorderColor = #3C3C3C;
+            BorderColorDown = black;
+            BorderColorHover = black;
+            Borders = (1, 1, 1, 1);
+            TextColor = #3C3C3C;
+            TextColorDown = black;
+            TextColorHover = black;
+            Texture = None;
+            TextureDisabled = None;
+            TextureDown = None;
+            TextureDownFocused = None;
+            TextureDownHover = None;
+            TextureFocused = None;
+            TextureHover = None;
+        }
+    }
+
+    Button.bt_play {
+        Position = (160, 90);
+        Size = (64, 22);
+        Text = "Играть";
+        TextSize = 13;
+
+        Renderer {
+            BackgroundColor = #F5F5F5;
+            BackgroundColorDisabled = #E6E6E6;
+            BackgroundColorDown = #EBEBEB;
+            BackgroundColorHover = white;
+            BorderColor = #3C3C3C;
+            BorderColorDisabled = #7D7D7D;
+            BorderColorDown = black;
+            BorderColorFocused = #1E1EB4;
+            BorderColorHover = black;
+            Borders = (1, 1, 1, 1);
+            TextColor = #3C3C3C;
+            TextColorDisabled = #7D7D7D;
+            TextColorDown = black;
+            TextColorHover = black;
+            Texture = None;
+            TextureDisabled = None;
+            TextureDown = None;
+            TextureDownFocused = None;
+            TextureDownHover = None;
+            TextureFocused = None;
+            TextureHover = None;
+        }
+    }
+
+    Button.bt_showSolve {
+        Position = (238, 90);
+        Text = "Смотреть решение";
+        TextSize = 13;
+
+        Renderer {
+            BackgroundColor = #F5F5F5;
+            BackgroundColorDisabled = #E6E6E6;
+            BackgroundColorDown = #EBEBEB;
+            BackgroundColorHover = white;
+            BorderColor = #3C3C3C;
+            BorderColorDisabled = #7D7D7D;
+            BorderColorDown = black;
+            BorderColorFocused = #1E1EB4;
+            BorderColorHover = black;
+            Borders = (1, 1, 1, 1);
+            TextColor = #3C3C3C;
+            TextColorDisabled = #7D7D7D;
+            TextColorDown = black;
+            TextColorHover = black;
+            Texture = None;
+            TextureDisabled = None;
+            TextureDown = None;
+            TextureDownFocused = None;
+            TextureDownHover = None;
+            TextureFocused = None;
+            TextureHover = None;
+        }
+    }
+
+    CheckBox.chb_dzone {
+        Position = (10, 90);
+        Renderer = &1;
+        Size = (18, 18);
+        Text = "F00FC7C6";
+        TextSize = 13;
+    }
+
+    CheckBox.chb_timer {
+        Position = (10, 10);
+        Renderer = &1;
+        Size = (18, 18);
+        Text = "Таймер";
+        TextSize = 13;
+    }
+
+    EditBox.eb_countdown {
+        Enabled = false;
+        InputValidator = UInt;
+        Position = (180, 10);
+        Renderer = &2;
+        Size = (60, 22);
+        Text = 120;
+        TextSize = 13;
+    }
+
+    Label.Label1 {
+        AutoSize = true;
+        Position = (240, 10);
+        Renderer = &3;
+        Size = (30.2, 18);
+        Text = "сек.";
+        TextSize = 13;
+    }
+
+    Label.Label2 {
+        AutoSize = true;
+        Position = (10, 40);
+        Renderer = &3;
+        Size = (156.2, 18);
+        Text = "Количество элементов";
+        TextSize = 13;
+    }
+
+    EditBox.eb_elcount {
+        InputValidator = UInt;
+        Position = (180, 40);
+        Renderer = &2;
+        Size = (40, 22);
+        Text = 4;
+        TextSize = 13;
+    }
+}
