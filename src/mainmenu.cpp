@@ -17,7 +17,7 @@ MainMenu::~MainMenu()
 bool MainMenu::exec()
 {
     isActive = true;
-    m_renderWindow->create(sf::VideoMode(800, 600), "Main Menu");
+    m_renderWindow->create(sf::VideoMode(800, 600), "Main Menu", sf::Style::Close);
     m_gui.setWindow(*m_renderWindow);
     m_gui.loadWidgetsFromFile("./assets/form.txt");
     initEventHandler();
@@ -32,7 +32,6 @@ bool MainMenu::exec()
 int MainMenu::errorCode()
 {
     return m_errCode;
-
 }
 
 /** @brief loop
@@ -65,8 +64,9 @@ bool MainMenu::loop()
   */
 void MainMenu::initEventHandler()
 {
-    m_gui.get<tgui::Button>("bt_play")->onPress([&]{play();});
-    m_gui.get<tgui::Button>("bt_play")->onPress([&]{});
+    m_gui.get<tgui::Button>("bt_play")->onPress(&MainMenu::play, this);
+    m_gui.get<tgui::Button>("bt_showSolve")->onPress(&MainMenu::solve, this);
+    m_gui.get<tgui::CheckBox>("chb_timer")->onChange(&MainMenu::onChbTimerUpdate, this);
 }
 
 /** @brief play
@@ -75,14 +75,50 @@ void MainMenu::initEventHandler()
   */
 void MainMenu::play()
 {
+    updateMenuState();
+    m_menuState.isPlayMode = true;
+    isActive = false;
+}
 
+/** @brief solve
+  *
+  * @todo: document this function
+  */
+void MainMenu::solve()
+{
+    updateMenuState();
+    m_menuState.isSolveMode = true;
+    isActive = false;
+}
+
+/** @brief onChbTimerUpdate
+  *
+  * @todo: document this function
+  */
+void MainMenu::onChbTimerUpdate(bool checked)
+{
+    m_gui.get<tgui::EditBox>("eb_countdown")->setEnabled(checked);
 }
 
 /** @brief getState
   *
   * @todo: document this function
   */
-MenuState MainMenu::getState()
+MainMenu::MenuState MainMenu::getState()
 {
     return m_menuState;
+}
+
+/** @brief updateMenuState
+  *
+  * @todo: document this function
+  */
+void MainMenu::updateMenuState()
+{
+    m_menuState.hasTimer = m_gui.get<tgui::CheckBox>("chb_timer")->isChecked();
+    m_menuState.isCreepyMode = m_gui.get<tgui::CheckBox>("chb_dzone")->isChecked();
+    if (m_menuState.hasTimer) {
+        m_menuState.timerSVal = m_gui.get<tgui::EditBox>("eb_countdown")->getText().toInt();
+    }
+    m_menuState.elementsCount = m_gui.get<tgui::EditBox>("eb_elcount")->getText().toInt();
 }

@@ -29,6 +29,8 @@ class MainMenu : AbstractState
         tgui::Gui m_gui;
         bool loop();
         void play();
+        void solve();
+        void onChbTimerUpdate(bool);
         void updateMenuState();
         void initEventHandler();
         bool isActive = false;
