@@ -10,6 +10,7 @@ class AbstractState
         virtual ~AbstractState();
         virtual bool exec() = 0;
         virtual int errorCode() = 0;
+
     protected:
         sf::RenderWindow* m_renderWindow;
     private:

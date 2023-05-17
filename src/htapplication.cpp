@@ -19,16 +19,29 @@ int HTApplication::exec()
     sf::RenderWindow app(sf::VideoMode(800, 600, 8), "HANOI");
 
     MainMenu menu(&app);
-    menu.exec();
     std::cout<<menu.getState().elementsCount;
+
+    StateGame game(&app,
+                   menu.getState().isPlayMode&(!menu.getState().isSolveMode),
+                   menu.getState().elementsCount,
+                   menu.getState().hasTimer,
+                   menu.getState().timerSVal);
 	// Start the game loop
-	if (app.isOpen()) {
-        StateGame game(&app,
-                       menu.getState().isPlayMode&(!menu.getState().isSolveMode),
-                       menu.getState().elementsCount,
-                       menu.getState().hasTimer,
-                       menu.getState().timerSVal);
-        game.exec();
+	bool stateMenu = true;
+	while (app.isOpen()) {
+        if (stateMenu) {
+            menu.exec();
+            game = StateGame (&app,
+                   menu.getState().isPlayMode&(!menu.getState().isSolveMode),
+                   menu.getState().elementsCount,
+                   menu.getState().hasTimer,
+                   menu.getState().timerSVal);
+            stateMenu = false;
+        }
+        else {
+            game.exec();
+            stateMenu = game.isExitToMainMenu();
+        }
 	}
 
     return EXIT_SUCCESS;

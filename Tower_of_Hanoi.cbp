@@ -15,6 +15,8 @@
 					<Add option="-g" />
 					<Add directory="src/game_objects" />
 					<Add directory="src" />
+					<Add directory="./" />
+					<Add directory="src/ai" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -26,6 +28,8 @@
 					<Add option="-O2" />
 					<Add directory="src/game_objects" />
 					<Add directory="src" />
+					<Add directory="./" />
+					<Add directory="src/ai" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -59,12 +63,25 @@
 		<Unit filename=".gitignore" />
 		<Unit filename="cb.bmp" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/abstractstate.cpp" />
+		<Unit filename="src/abstractstate.h" />
+		<Unit filename="src/ai/aidriver.cpp" />
+		<Unit filename="src/ai/aidriver.h" />
+		<Unit filename="src/conf.h" />
+		<Unit filename="src/game_objects/abstractgameobject.cpp" />
+		<Unit filename="src/game_objects/abstractgameobject.h" />
 		<Unit filename="src/game_objects/htblock.cpp" />
 		<Unit filename="src/game_objects/htblock.h" />
 		<Unit filename="src/game_objects/httowerbase.cpp" />
 		<Unit filename="src/game_objects/httowerbase.h" />
+		<Unit filename="src/game_objects/towersset.cpp" />
+		<Unit filename="src/game_objects/towersset.h" />
 		<Unit filename="src/htapplication.cpp" />
 		<Unit filename="src/htapplication.h" />
+		<Unit filename="src/mainmenu.cpp" />
+		<Unit filename="src/mainmenu.h" />
+		<Unit filename="src/stategame.cpp" />
+		<Unit filename="src/stategame.h" />
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>

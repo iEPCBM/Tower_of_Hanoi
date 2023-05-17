@@ -17,6 +17,7 @@ MainMenu::~MainMenu()
 bool MainMenu::exec()
 {
     isActive = true;
+    m_renderWindow->close();
     m_renderWindow->create(sf::VideoMode(800, 600), "Main Menu", sf::Style::Close);
     m_gui.setWindow(*m_renderWindow);
     m_gui.loadWidgetsFromFile("./assets/form.txt");
@@ -50,8 +51,14 @@ bool MainMenu::loop()
                 m_renderWindow->close();
                 isActive = false;
             }
+            if (event.type == sf::Event::KeyPressed) {
+                if (event.key.code == sf::Keyboard::Escape) {
+                    m_renderWindow->close();
+                    isActive = false;
+                }
+            }
         }
-        m_renderWindow->clear();
+        m_renderWindow->clear(); //Hmmm, maybe not required
         m_gui.draw();
         m_renderWindow->display();
     }

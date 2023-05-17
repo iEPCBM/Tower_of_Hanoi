@@ -5,6 +5,7 @@
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
 #include <cstdint>
+#include <conf.h>
 
 class MainMenu : AbstractState
 {
